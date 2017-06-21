@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>重庆教育部电商平台</title>
+    <meta name="author" content="{:getzuozhe(zuozhe)[0][zuozhe]}"/>
+    <meta name="keywords" content="{:getzuozhe(key)[0][key]}" />
+    <meta name="description" content="{:getzuozhe(miaoshu)[0][miaoshu]}" />
+
+    <meta name="applicable-device" content="pc,mobile">
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bxslider.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/js/bxslider.min.js"></script>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script src="__PUBLIC__/bootstrap/js/bootstrap.js"></script>
+    <!--[if lt IE 9]>
+
+
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js">
+
+    </script><script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body>
+<header>
+    <div class="top_menu">
+        <div class="container"><span class="top_name">欢迎光临</span>
+            <div class="language"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>&nbsp;&nbsp;咨询电话：{:getTel()}</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9"><a href="#"><img style="width: 432px;height: 90px;" src="__PUBLIC__/images/{:getLogo()}" class="logo" alt="网站logo"/></a></div>
+            <div id="topsearch" class="col-xs-12 col-sm-3 col-md-3">
+                <!--<form id="searchform" method="get" action="#">
+                    <div class="input-group search_group">
+                        <input type="text" name="name" class="form-control input-sm" placeholder="产品搜索">
+                        <span class="input-group-btn"><a href="#" class="btn btn-sm mysearch_btn" type="button">搜 索</a></span></div>
+                </form>-->
+
+            </div>
+        </div>
+    </div>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">导航菜单</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <span id="small_search" class="glyphicon glyphicon-search" aria-hidden="true"></span><a class="navbar-brand" href="#">导航菜单</a></div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="__CONTROLLER__/index/">网站首页</a></li>
+
+                    <li class="dropdown"><a href="__CONTROLLER__/xhjj.html">学会概况</a><a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                        <ul class="dropdown-menu nav_small" role="menu">
+                            <li><a href="__CONTROLLER__/xhjj.html">学会简介</a></li>
+                            <li><a href="__CONTROLLER__/xhld.html">学会领导</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="__CONTROLLER__/xhzx.html">学会动态</a><a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                        <ul class="dropdown-menu nav_small" role="menu">
+                            <li><a href="__CONTROLLER__/xhzx.html">学会资讯</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">高校信息</a><a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                        <ul class="dropdown-menu nav_small" role="menu">
+                            <li><a href="__CONTROLLER__/gxsd.html">高校视点</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">文件通知</a><a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                        <ul class="dropdown-menu nav_small" role="menu">
+                            <li><a href="__CONTROLLER__/xhtz.html">学会通知</a></li>
+                            <li><a href="__CONTROLLER__/wjxz.html">文件下载</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="__CONTROLLER__/zcfg.html">政策法规</a><a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+
+                    </li>
+                      <li class="dropdown">
+                        <a href="#">关于电商</a>
+                        <a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                        <ul class="dropdown-menu nav_small" role="menu">
+                            <li><a href="__CONTROLLER__/gyds.html">电商简介</a></li>
+                            <li><a href="__CONTROLLER__/jnds.html">电商技能</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">学术期刊</a>
+                        <a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                        <ul class="dropdown-menu nav_small" role="menu">
+                            <li><a href="__CONTROLLER__/yjjj.html">《重庆高校研究》简介</a></li>
+                            <li><a href="__CONTROLLER__/gqml.html">各期目录</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="__CONTROLLER__/video.html">视频</a>
+                        <a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="__CONTROLLER__/lxwm.html">联系我们</a>
+                        <a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-menu-down btn-xs"></span></a>
+
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse --></div>
+    </nav>
+</header>
+
+{__CONTENT__}
+<footer >
+    <div class="container" >
+        <div class="row">
+            <p  style="text-align: center;font-size: 18px;">{:getfoot();}</p>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="__PUBLIC__/js/online.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    var winHeight=200;
+    var timer=null;
+    function show(){
+        document.getElementById("popWin").style.display="block";
+        timer=setInterval("lift(5)",2);
+    }
+    function hid(){
+        timer=setInterval("lift(-5)",2);
+    }
+    function lift(n) {
+        var w=document.getElementById("popWin");
+        var h=parseInt(w.style.height||w.currentStyle.height);
+        if (h<winHeight && n>0 || h>1 && n<0){
+            w.style.height=(h+n).toString()+"px";
+        }
+        else
+        {
+            w.style.display=(n>0?"block":"none");
+            clearInterval(timer);
+        }
+    }
+    window.onload=function(){
+        setTimeout("show()",1000);
+    }
+</script>
+
+
+

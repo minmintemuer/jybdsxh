@@ -1,0 +1,71 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="__CONTROLLER__/banner">横幅广告</a></li>
+    </ul>
+</div>
+
+<div  style="width: 87%;border: 0px solid red;float: right;">
+
+    <div id="usual1" class="usual">
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">图片</a></li>
+                <li><a href="#tab2">增加图片</a></li>
+            </ul>
+        </div>
+        <div id="tab1">
+        <div style="margin: 10px;font-size: 22px; font-weight: 700;">横幅广告</div>
+
+        <ul class="imglist">
+            <volist name="banner" id="vo">
+                 <li class="selected" style="width: 1000px ">
+                      <img style="height: 200px;float: left" src="__PUBLIC__/images/{$vo.img}" />
+                     <a href="__CONTROLLER__/delbanner?id={$vo.id}" style="color: red;line-height: 200px;font-size: 30px;float: right" >删除</a>
+                 </li>
+
+            </volist>
+        </ul>
+
+        <div style="margin: 10px;font-size: 22px; font-weight: 700;">logo图标</div>
+        <span><img src="__PUBLIC__/images/{$logo[0][img]}"  style="width: 432px;height: 90px;"/></span>
+        </div>
+
+        <div id="tab2" class="tabson">
+
+            <form action="__CONTROLLER__/addbanner" enctype="multipart/form-data" method="post">
+        <div style="margin: 10px;font-size: 22px; font-weight: 700;">横幅广告添加(图片大小1684*482)</div>
+        <ul class="forminfo">
+            <li><label>上传图片</label><input required name="pic" type="file"/></li>
+            <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+        </ul>
+    </form>
+        <form action="__CONTROLLER__/alterlogo" enctype="multipart/form-data" method="post">
+            <div style="margin: 10px;font-size: 22px; font-weight: 700;">logo图标修改(图片尺寸:432*90)</div>
+            <ul class="forminfo">
+                <li><label>上传图片</label><input required name="pic" type="file"/></li>
+                <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+            </ul>
+            <!--logo图标上传直接替换掉之前的logo-->
+    </div>
+    </form>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+
+
+
+</div>
+

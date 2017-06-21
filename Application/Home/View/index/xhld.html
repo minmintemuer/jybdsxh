@@ -1,0 +1,50 @@
+<div class="page_bg" style="background: url(__PUBLIC__/images/5780c309432c5.jpg) center top no-repeat;display:block;">
+</div>
+<div class="container" style="height:1000px;">
+    <div class="row"><!-- right -->
+        <div class="col-xs-12 col-sm-8 col-md-9" style="float:right">
+            <div class="list_box">
+                <h2 class="left_h2">学会领导</h2>
+
+                <div class="page"> </div>
+            </div>
+             <div class="section">
+      <div class="container">
+          <foreach name="xhld" item="v">
+        <div class="row">
+          <div class="col-md-2">
+            <img src="__PUBLIC__/images/{$v.img}"
+            class="img-circle img-responsive">
+          </div>
+          <div class="col-md-8">
+              <h3 class="text-left">{$v.name}</h3>
+              <p class="text-left">{$v.produce}</p>
+          </div>
+        </div>
+          </foreach>
+      </div>
+    </div>
+
+
+        </div>
+        <!-- left -->
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="left_nav" id="categories">
+                <h2 class="left_h2">学会概况</h2>
+                <ul class="left_nav_ul" id="firstpane">
+                    <li><a class="biglink" href="__CONTROLLER__/xhjj.html">学会简介</a><span class="menu_head"></span>
+                        <ul class="left_snav_ul menu_body">
+                            <li><a href="">部门新闻</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="biglink" href="__CONTROLLER__/xhld.html">学会领导</a><span class="menu_head"></span>
+                        <ul class="left_snav_ul menu_body">
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</div>

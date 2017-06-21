@@ -1,0 +1,74 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="__CONTROLLER__/foot">修改注脚</a></li>
+    </ul>
+</div>
+
+<div  style="width: 87%;border: 0px solid red;float: right;">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">前后台注脚</a></li>
+            </ul>
+        </div>
+
+        <div id="tab1" class="tabson">
+
+
+                <ul class="forminfo">
+                        <li>
+                            <label style="width: 300px;">前台网页注脚</label>
+                            <input name="" type="text" class="dfinput" value="{$foot[0][content]}" disabled  style="width:518px;"/>
+                        </li>
+                        <li>
+                            <label style="width: 300px;">后台登陆页脚</label>
+                            <input name="" type="text" class="dfinput" value="{$foot[1][content]}" disabled  style="width:518px;"/>
+                        </li>
+                    <br><br>
+                    <li>
+                        <form action="__CONTROLLER__/addfoot" method="post">
+                            <label style="width: 300px;">修改前台网页注脚:</label>
+                            <input name="qtfoot"  class="dfinput" type="text" style="width:518px;float: left;" required/>&nbsp;&nbsp;
+                            <input name="" type="submit" class="btn" value="修改" style=""/>
+                        </form>
+                        <br/><br/><br/>
+                        <form action="__CONTROLLER__/addfoot" method="post">
+                            <label style="width: 300px;">修改后台登陆页脚</label>
+                            <input name="htfoot" type="text" style="width:518px;" class="dfinput" required/>&nbsp;&nbsp;
+                            <input name="" type="submit" class="btn" value="修改" style=""/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="__CONTROLLER__/altertel" method="post">
+                            <label style="width: 300px;">修改主页tel内容</label>
+                            <input name="tel" type="text" style="width:518px;" class="dfinput" required/>
+                            <input name="" type="submit" class="btn" value="修改" style=""/>
+                        </form>
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+
+
+
+</div>
+

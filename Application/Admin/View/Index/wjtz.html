@@ -1,0 +1,117 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="__CONTROLLER__/wjtz">文件通知</a></li>
+    </ul>
+</div>
+
+<div  style="width: 87%;border: 0px solid red;float: right;">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">信息</a></li>
+                <li><a href="#tab2">增加信息</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="tabson">
+
+            <div style="margin: 10px; font-size: 22px; font-weight: 700;">学会通知</div>
+
+            <table class="imgtable">
+
+                <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>内容</th>
+                    <th>日期</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>{$xhtz[0][title]}</td>
+                    <td>{$xhtz[0][content]}</td>
+                    <td>{$xhtz[0][time]}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div style="margin: 10px; font-size: 22px; font-weight: 700;">文件下载</div>
+
+            <table class="imgtable">
+
+                <thead>
+                <tr>
+                    <th>文件名</th>
+
+                    <th>日期</th>
+
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <volist name="wjxz" id="vo">
+                <tr>
+                    <td>{$vo.lanmu}</td>
+                    <td>{$vo.time}</td>
+                    <td><a href="__CONTROLLER__/delwjxz?id={$vo.id}" class="tablelink"> 删除</a></td>
+                </tr>
+                </volist>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="tab2" class="tabson">
+
+            <div style="margin: 10px; font-size: 22px; font-weight: 700;">学会通知</div>
+
+            <form action="__CONTROLLER__/alterxhtz" method="post">
+                <ul class="forminfo">
+                    <li><label>修改标题</label>
+                        <input type="text" name="name" style="width:650px;height:30px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue"/>
+                    </li>
+                    <li><label>修改内容</label>
+
+                        <textarea required name="content" style="width:650px;height:150px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue"></textarea>
+
+                    </li>
+                    <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+                </ul>
+            </form>
+            <div style="margin: 10px; font-size: 22px; font-weight: 700;">文件下载<b>（提供下载的文件支持格式为:zip,rar,doc,docx,xls,ppt,pptx,xlsx,pdf,txt,psd）</b></div>
+
+            <form action="__CONTROLLER__/addwjxz" method="POST" enctype="multipart/form-data">
+                <ul class="forminfo">
+                    <li><label>上传文件</label><input required type="file" name="file" /></li><br/>
+                    <li><label>文件名</label>
+                        <input type="text" name="title" style="width:650px;height:30px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue"/>
+                    </li>
+                    <li><label>内容</label>
+                    <textarea required name="content" style="width:650px;height:150px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue"></textarea>
+                </li>
+
+                    <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+                </ul>
+            </form>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+</div>
+</div>
+

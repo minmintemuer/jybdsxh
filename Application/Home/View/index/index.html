@@ -1,0 +1,195 @@
+
+<!-- bxslider -->
+<div class="flash">
+    <ul class="bxslider">
+        <foreach name="banner" item="v">
+        <li><a href=""><img src="__PUBLIC__/images/{$v.img}" alt="广告一" /></a></li>
+        </foreach>
+    </ul>
+</div>
+<script type="text/javascript">
+    $('.bxslider').bxSlider({
+        adaptiveHeight: true,
+        infiniteLoop: true,
+        hideControlOnEnd: true,
+        auto:true
+    });
+</script>
+<div class="section" style="background-color:#F2F2F2;">
+    <div class="container"style="background-color:#fff;" >
+<div class="container" >
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="about_box">
+                <h2 class="about_h2">学会简介</h2>
+                <span class="about_span">INTRODUCE</span>
+                <section>
+                    <img align="left" src="__PUBLIC__/images/{:getXhjj()[0][img]}" alt="公司简介">
+                    <p class=" text-word" style="text-indent: 2em;">
+                        {:getXhjj()[0][content]}
+                    </p>
+                    <script>
+                        $(document).ready(function(){
+                            subStr(".text-word",520);
+                            function subStr(obj,iNum){
+                                var str=$(obj).text();
+                                if(str.length<=iNum){
+                                    $(obj).text(str);
+                                }else{
+                                    $(obj).text(str.substring(0,iNum)+"...");
+                                    $(obj).attr("title",str);
+                                }
+                            }
+                        });
+
+                    </script>
+                    <a href="__CONTROLLER__/xhjj.html" class="about_more">查看详细 &gt;&gt;</a>
+                    <section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="news_box">
+                <h2 class="about_h2">学会资讯</h2>
+                <span class="about_span">INFORMATION</span>
+                <ul class="index_news">
+                    <volist name="xhzx" id="vo">
+                    <li><a href="__CONTROLLER__/xhzxcont?id={$vo.id}" style="max-width:400px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{$vo.lanmu}</a>  <span class='news_time' style="margin-top: -20px;">{$vo.time}</span></li>
+                    </volist>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="news_box">
+                <h2 class="about_h2">高校视点</h2>
+                <span class="about_span">FOCUSE</span>
+                <ul class="index_news">
+                    <volist name="gxsd" id="vo">
+                        <li><a href="__CONTROLLER__/gxsdcont?id={$vo.id}" style="max-width:400px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{$vo.lanmu}</a>  <span class='news_time' style="margin-top: -20px;">{$vo.time}</span></li>
+
+                    </volist>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <volist name="gxsd" id="v" offset="0" length='3'>
+            <div class="news_box">
+                <h2 class="about_h2">高校信息</h2>
+                <span class="about_span">NEWS</span>
+                <div class="index_news">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="__CONTROLLER__/gxsdcont.html?id={$v.id}">
+                                <img src="__PUBLIC__/images/{$v.img}"  class="img-responsive" style="height: 110px">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{$v.lanmu}</p>
+                            <p style="text-indent:32px;display:block;width: 350px;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">{$v.content}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </volist>
+
+            <div style="margin-top:20px;">
+
+                <a href="__CONTROLLER__/gxsd.html" class="about_more">查看更多&gt;&gt;</a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+
+            <div class="news_box">
+
+                    <volist name="dsjn" id="vo" >
+                        <div class="news_box">
+                            <h2 class="about_h2">电商技能</h2>
+                            <span class="about_span">SKILL</span>
+                            <div class="index_news">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="__CONTROLLER__/jndscont.html/?id={$vo.id}">
+                                            <img src="__PUBLIC__/images/{$vo.img}"  class="img-responsive"   style="height: 110px">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{$vo.title}</p>
+                                        <p style="text-indent:32px;display:block;width: 350px;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;">{$vo.content}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </volist>
+            </div>
+            <div style="margin-top:20px;">
+                <a href="__CONTROLLER__/jnds.html" class="about_more">查看更多 &gt;&gt;</a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="news_box">
+                <h2 class="about_h2">友情链接</h2>
+                <span class="about_span">CONNECT</span>
+                <div class="index_news" style="margin-bottom:50px;">
+                    <foreach name="a_href" item="v">
+                        <div class="col-md-2">
+                            <a href="http://{$v.href}" target="_blank">{$v.name}</a>
+
+                        </div>
+                    </foreach>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+    </div>
+</div>
+<div class="hidden-xs" id="popWin" style="width:300px;height:0px;position:fixed;right:1px;bottom:1px;border:1px solid #0066FF;display:none;background:#FFFFFF;padding:1px;z-index:99999;">
+    <div style="background-color:#0066FF;color:#FFFFFF;padding:5px"><b>官方公告</b><span style="color:#FFFFFF;cursor:hand;position:absolute;right:10px;" onclick="hid()">×关闭</span></div>
+    <div style="padding:5px;color:#e0bf1e;font-weight:bold;font-size:14px;line-height:24px;">&nbsp;{$gg}</div>
+</div>

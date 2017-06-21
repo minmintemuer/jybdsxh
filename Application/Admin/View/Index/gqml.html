@@ -1,0 +1,72 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="__CONTROLLER__/gqml">各期目录</a></li>
+    </ul>
+</div>
+
+<div  style="width: 87%;border: 0px solid red;float: right;">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">信息</a></li>
+                <li><a href="#tab2">增加信息</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="tabson">
+
+            <div style="margin: 10px; font-size: 22px; font-weight: 700;">各期目录</div>
+
+            <table class="imgtable">
+
+                <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>发布日期</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <foreach name="gqml" item="vo">
+                <tr>
+                    <td>{$vo.lanmu}</td>
+                    <td>{$vo.time}</td>
+                    <td><a href="__CONTROLLER__/delgqml?id={$vo.id}" class="tablelink"> 删除</a></td>
+                </tr>
+                    </foreach>
+                </tbody>
+            </table>
+        </div>
+        <div id="tab2" class="tabson">
+
+            <div style="margin: 10px; font-size: 22px; font-weight: 700;">各期目录添加</div>
+
+            <form action="__CONTROLLER__/addgqml" method="post">
+                <ul class="forminfo">
+
+                    <li><label>标题</label><input name="title" type="text" required class="dfinput"   style="width:518px;"/></li>
+                    <li><label>内容</label><textarea required name="content" style="width:650px;height:150px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue"></textarea>
+
+                    </li>
+                    <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+                </ul>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            $("#usual1 ul").idTabs();
+        </script>
+
+        <script type="text/javascript">
+            $('.tablelist tbody tr:odd').addClass('odd');
+        </script>
+
+
+    </div>
+</div>
+

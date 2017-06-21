@@ -1,0 +1,42 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="__CONTROLLER__/xhjj">学会简介</a></li>
+    </ul>
+</div>
+<div  style="width: 87%;border: 0px solid red;float: right;">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">更改信息</a></li>
+            </ul>
+        </div>
+
+        <div id="tab1" class="tabson">
+
+            <form action="__CONTROLLER__/alterxhjj" enctype="multipart/form-data" method="post">
+                <ul class="forminfo">
+
+                    <li><label>上传图片</label><input type="file" name="pic" />
+                    </li><!--若重新上传图片，则覆盖之前的图片，可不修改图片-->
+
+                    <li><label>修改内容</label>
+
+                        <textarea required name="content" style="width:700px;height:250px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue">请输入修改的内容</textarea>
+
+                    </li>
+                    <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+                </ul>
+            </form>
+
+        </div>
+
+
+
+    </div>
+</div>
+

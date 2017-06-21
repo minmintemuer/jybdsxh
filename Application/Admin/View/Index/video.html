@@ -1,0 +1,72 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="#">视频上传</a></li>
+    </ul>
+</div>
+<div  style="width: 87%;border: 0px solid red;float: right;">
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1">视频信息</a></li>
+                <li><a href="#tab2">上传视频</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="tabson">
+
+            <table class="imgtable">
+
+                <thead>
+                <tr>
+                    <th width="100px;">图片</th>
+                    <th>标题</th>
+                    <th>日期</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <volist name="video" id="vo">
+                    <tr>
+                        <td class="imgtd"><img style="width:80px;height:100px;" src="__PUBLIC__/images/{$vo.img}" /></td>
+                        <td>{$vo.title}</td>
+                        <td>{$vo.date}</td>
+                        <td><a href="__CONTROLLER__/delvideo?id={$vo.id}" class="tablelink"> 删除</a></td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+
+        <div id="tab2" class="tabson">
+            <form action="__CONTROLLER__/addvideo" enctype="multipart/form-data" method="POST">
+                <ul class="forminfo">
+                    <li><label>标题</label><input name="title" required type="text" class="dfinput"   style="width:518px;"/></li>
+                    <li><label>作者</label><input name="author" required type="text" class="dfinput"   style="width:518px;"/></li>
+                    <li><label>上传封面</label><input type="file" name="pic" /></li>
+                    <li><label>上传视频</label><input type="file" name="movie" /></li>
+                    <li><p style="color: red;margin-left: 80px;">(仅支持MP4[H264+AAC])</p></li>
+                    <li><label>简介</label><textarea required name="content" style="width:550px;height:150px;padding: 10px;font-size: 16px;line-height: 20px;border: solid 1px deepskyblue"></textarea></li>
+                    <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+                </ul>
+            </form>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+</div>
+

@@ -1,0 +1,33 @@
+<div class="container">
+<div class="row">
+    <div >
+        <h1 class="left_h2">视频集
+            <small>VIDEO</small>
+        </h1>
+    </div>
+
+    <div class="container-fluid" style="min-height: 800px;">
+    <volist name="video" id="vo">
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="__PUBLIC__/images/{$vo.img}" style="height:200px;width: 250px;" >
+            <div class="caption">
+                <h7>视频名称:{$vo.title}</h7>
+                <p><span>点赞数:{$vo.cont}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>浏览数:{$vo.visitor}</span></p>
+                <p>
+                    <!--<a href="#" class="btn btn-primary" role="button">-->
+                        <!--查看详情-->
+                    <!--</a>-->
+                    <a id="btn" href="__CONTROLLER__/watch.html?id={$vo.id}" class="btn btn-primary" role="button">
+                        立即观看
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    </volist>
+    </div>
+
+
+</div>
+</div>

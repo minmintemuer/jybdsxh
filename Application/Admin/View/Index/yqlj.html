@@ -1,0 +1,74 @@
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="__CONTROLLER__/index">首页</a></li>
+        <li><a href="__CONTROLLER__/yqlj">友情链接</a></li>
+    </ul>
+</div>
+
+<div   style="width: 87%;border: 0px solid red;float: right;">
+
+
+    <div id="usual1" class="usual">
+
+        <div class="itab">
+            <ul>
+                <li><a href="#tab1" class="selected">链接信息</a></li>
+                <li><a href="#tab2">增加链接</a></li>
+            </ul>
+        </div>
+        <div id="tab1" class="tabson">
+
+            <table class="tablelist">
+                <thead>
+                <tr>
+                    <th>编号<i class="sort"><img src="__PUBLIC__/admin/images/px.gif" /></i></th>
+                    <th>链接名字</th>
+                    <th>链接地址</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="yqlj" id="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.href}</td>
+                    <td><a href="__CONTROLLER__/delyqlj?id={$vo.id}" class="tablelink">删除</a></td>
+                </tr>
+                </volist>
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+
+        <div id="tab2" class="tabson">
+            <form action="__CONTROLLER__/addyqlj" method="post">
+            <ul class="forminfo">
+                <li><label>链接名称</label><input name="name" type="text" required class="dfinput"   style="width:518px;"/></li>
+                <li><label>链接地址</label><input name="address" type="text" required class="dfinput"   style="width:518px;"/></li>
+                <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="提交"/></li>
+            </ul>
+            </form>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+
+
+
+</div>
+
+

@@ -1,0 +1,56 @@
+
+<div class="container" style="height:1000px;">
+    <div class="row"><!-- right -->
+        <div class="col-xs-12 col-sm-8 col-md-9" style="float:right">
+            <div class="list_box">
+                <h2 class="left_h2">视频简介</h2>
+
+                <div class="page"> </div>
+            </div>
+            <div class="section">
+                <div class="container">
+
+                    <video width="520" height="400" style="border: 1px black solid;display: block;" controls>
+                        <source src="__PUBLIC__/video/{$movie[0][movie]}" type="video/mp4">
+                        <source src="__PUBLIC__/video/{$movie[0][movie]}" type="video/webm">
+                        您的浏览器不支持 HTML5 video 标签。
+                    </video>
+                    <span>点赞</span>
+                    <button  id="btnb" class="icon ion-heart" onclick ="chage();" style="color: #cad9ea;font-size: 20px;border: 0; background: rgba(0,0,0,0)"></button>
+                    <script>
+                        function chage() {
+                            var oI = document.getElementById('btnb');
+                            oI.style.color="red";
+                            oI.disabled="true";
+                            $.ajax({
+                                url: "__CONTROLLER__/addwathch",
+                                type: 'post',
+                                data: {
+                                    id: ''+{$movie[0][id]},
+                                }
+                            });
+
+                        }
+                    </script>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- left -->
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <div class="left_nav" id="categories">
+                <h2 class="left_h2">视频简介</h2>
+
+                <ul class="left_nav_ul" id="firstpane">
+                    <li>作者：<span>{$movie[0][author]}</span></li>
+                    <li>简介：<br><span>{$movie[0][content]}</span></li>
+                    <li>日期：<span>{$movie[0][date]}</span></li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

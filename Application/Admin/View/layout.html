@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>重庆教育部电商平台后台管理</title>
+    <link href="__PUBLIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/editor/kindeditor.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+
+            $('.title').click(function(){
+                var $ul = $(this).next('ul');
+                $('dd').find('ul').slideUp();
+                if($ul.is(':visible')){
+                    $(this).next('ul').slideUp();
+                }else{
+                    $(this).next('ul').slideDown();
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+<header style="height: 88px;border: 0px red solid;background:url(__PUBLIC__/admin/images/topbg.gif) repeat-x;">
+<div class="topleft">
+    <a href="index.html"><img src="__PUBLIC__/admin/images/logo.png" title="系统首页" /></a>
+</div>
+<div class="topright">
+
+    <div class="user" style="padding:0px 5px 0px 0px;">
+        <a  href="login.html" target="_parent"><span>admin</span>
+            <i style="font-weight: 700">退出</i></a>
+    </div>
+
+</div>
+
+</header>
+
+<nav style="float:left;width: 13%;border: 0px solid red">
+<div class="lefttop"><span></span>通讯录</div>
+
+<dl class="leftmenu" style="width: 100%;">
+
+    <dd>
+        <div class="title">
+            <span><img src="__PUBLIC__/admin/images/leftico01.png" /></span>管理信息
+        </div>
+        <ul class="menuson">
+            <li id="index"><cite></cite><a href="__CONTROLLER__/index.html">首页</a><i></i></li>
+            <li id="banner"><cite></cite><a href="__CONTROLLER__/banner.html">横幅广告</a><i></i></li>
+            <li id="ggl"><cite></cite><a href="__CONTROLLER__/ggl.html">公告信息</a><i></i></li>
+            <li id="xhjj"><cite></cite><a href="__CONTROLLER__/xhjj.html">学会简介</a><i></i></li>
+            <li id="wjtz"><cite></cite><a href="__CONTROLLER__/wjtz.html">文件通知</a><i></i></li>
+            <li id="dsjn"><cite></cite><a href="__CONTROLLER__/dsjn.html">电商技能</a><i></i></li>
+            <li id="gxsd"><cite></cite><a href="__CONTROLLER__/gxsd.html">资源讯息</a><i></i></li>
+            <li id="yqlj"><cite></cite><a href="__CONTROLLER__/yqlj.html">友情链接</a><i></i></li>
+            <li id="xhld"><cite></cite><a href="__CONTROLLER__/xhld.html">学会领导</a><i></i></li>
+            <li id="xsqk"><cite></cite><a href="__CONTROLLER__/xsqk.html">学术期刊</a><i></i></li>
+            <li id="gqml"><cite></cite><a href="__CONTROLLER__/gqml.html">各期目录</a><i></i></li>
+            <li id="zcfg"><cite></cite><a href="__CONTROLLER__/zcfg.html">政策法规</a><i></i></li>
+            <li id="lxwm"><cite></cite><a href="__CONTROLLER__/lxwm.html">联系我们</a><i></i></li>
+            <li id="foot"><cite></cite><a href="__CONTROLLER__/foot.html">修改脚注</a><i></i></li>
+            <li id="key"><cite></cite><a href="__CONTROLLER__/key.html">网页搜索</a><i></i></li>
+            <li id="video"><cite></cite><a href="__CONTROLLER__/video.html">视频添加</a><i></i></li>
+            <li id="xgmm"><cite></cite><a href="__CONTROLLER__/xgmm.html">修改密码</a><i></i></li>
+        </ul>
+
+        <script>
+            //导航栏切换
+            $(function(){
+                $("#{:getActive('__ACTION__')}").addClass("active");
+            });
+        </script>
+
+    </dd>
+</dl>
+    <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</nav>
+
+{__CONTENT__}
+</body>
+</html>
